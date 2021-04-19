@@ -4,7 +4,8 @@
 
 ```bashrc
 
-AZURE_SUB_ID=XXX
+# Create some variables for reuse
+AZURE_SUB_ID=XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 AZURE_RG=cdw-azgitops-20210418
 LOCATION=westus2
 
@@ -27,4 +28,3 @@ gh secret set AZURE_RG -b"$AZURE_RG"
 gh secret set AZURE_SUBSCRIPTION -b"$AZURE_SUB_ID"
 
 ```
-

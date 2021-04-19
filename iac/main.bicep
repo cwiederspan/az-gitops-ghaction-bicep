@@ -1,11 +1,14 @@
+param storageAccountName string
+param storageSku string = 'Standard_LRS'
+
 resource stg 'Microsoft.Storage/storageAccounts@2019-06-01' = {
-    name: 'cdwgitops20210418'
-    location: 'westus2'
-    kind: 'StorageV2'
-    sku: {
-      name: 'Standard_LRS'
-    }
-    properties: {
-      supportsHttpsTrafficOnly: true
-    }
+  name: storageAccountName
+  location: resourceGroup().location
+  kind: 'StorageV2'
+  sku: {
+    name: storageSku
   }
+  properties: {
+    supportsHttpsTrafficOnly: true
+  }
+}

@@ -4,7 +4,6 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-
       # Checkout code
     - uses: actions/checkout@main
 
@@ -20,4 +19,5 @@ jobs:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
         template: ./iac/main.bicep
-        # parameters: storageAccountType=Standard_LRS
+        parameters: 
+          storageAccountName="cdwazgitops20210418"

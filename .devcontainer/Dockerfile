@@ -21,7 +21,7 @@ RUN bash /tmp/library-scripts/common-debian.sh "${INSTALL_ZSH}" "${USERNAME}" "$
 # Install additional OS packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
   && apt-get -y install --no-install-recommends \
-  vim git libzip-dev unzip fzf software-properties-common
+  python-pip vim git libzip-dev unzip fzf software-properties-common
 
 # Install gh
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C99B11DEB97541F0 && \
