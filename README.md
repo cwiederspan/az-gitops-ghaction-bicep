@@ -6,7 +6,7 @@ files within the repository using a GitHub Action workflow.
 
 In this case, there is a simple [main.bicep](./iac/main.bicep) file that will create an Azure storage account.
 
-The [gitops.yaml](./github/workflows/gitops.yaml) GitHub Action file that will use the 
+The [gitops.yaml](./.github/workflows/gitops.yaml) GitHub Action file that will use the 
 [ARM Deploy](https://github.com/Azure/arm-deploy) action to execute the Bicep file whenever the repo is committed.
 
 ## Setup
