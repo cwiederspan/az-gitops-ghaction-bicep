@@ -28,3 +28,6 @@ RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-key C99B11DEB97
   apt-add-repository -u https://cli.github.com/packages && \
   apt update && \
   apt install gh
+
+# Install Bicep
+RUN az bicep install
