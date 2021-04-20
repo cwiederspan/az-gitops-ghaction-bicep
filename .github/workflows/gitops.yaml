@@ -1,7 +1,7 @@
 on: [push]
 name: Azure ARM
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       # Checkout code

@@ -1,5 +1,14 @@
 # GitOps using GitHub Actions with Azure
 
+This is an example of creating a GitOps-like approach for automatically executing
+any [Azure Bicep](https://docs.microsoft.com/en-us/azure/azure-resource-manager/templates/bicep-overview)
+files within the repository using a GitHub Action workflow.
+
+In this case, there is a simple [main.bicep](./iac/main.bicep) file that will create an Azure storage account.
+
+The [gitops.yaml](./github/workflows/gitops.yaml) GitHub Action file that will use the 
+[ARM Deploy](https://github.com/Azure/arm-deploy) action to execute the Bicep file whenever the repo is committed.
+
 ## Setup
 
 ```bashrc
@@ -22,9 +31,13 @@ AZURE_CREDS=$(az ad sp create-for-rbac \
     --scopes /subscriptions/$AZURE_SUB_ID/resourceGroups/$AZURE_RG \
     --sdk-auth)
 
-# Set the secret into a GitHub secret
+# Set the values into a GitHub secrets
 gh secret set AZURE_CREDENTIALS -b"$AZURE_CREDS"
 gh secret set AZURE_RG -b"$AZURE_RG"
 gh secret set AZURE_SUBSCRIPTION -b"$AZURE_SUB_ID"
 
 ```
+
+## Follow Up
+
+Email chwieder@microsoft.com for more information on this repository.
